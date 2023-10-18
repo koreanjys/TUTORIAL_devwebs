@@ -10,7 +10,8 @@ engine = create_engine(
     connect_args={"check_same_thread": False}
 )
 SessionLocal = sessionmaker(
-    autoflush=False
+    autoflush=False,
+    bind=engine,
 )
 
 Base = declarative_base()
